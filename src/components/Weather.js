@@ -11,6 +11,7 @@ const Weather = () => {
 
   const handleSearch = async () => {
     if (!city) return;
+    setLoading(true);
     try {
       const response = await axios.get(
         `https://api.weatherapi.com/v1/current.json?key=${api_key}&q=${city}`
@@ -40,7 +41,7 @@ const Weather = () => {
       <button onClick={handleSearch}>Search</button>
       </div>
 
-      {loading && <p className="error">Loading data…</p>}
+      {loading && <p>Loading data…</p>}
 
       {weatherData && (
         <div className="weather-cards">
