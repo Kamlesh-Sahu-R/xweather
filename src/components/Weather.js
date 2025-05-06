@@ -6,6 +6,7 @@ const Weather = () => {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [msg, setMsg] = useState("");
 
   let api_key = 'dd5d32c26faa45e5a3d113958250605';
 
@@ -13,16 +14,19 @@ const Weather = () => {
     if (!city) return;
     setWeatherData(null);
     setLoading(true);
+    setMsg("Loading data…");
     try {
       const response = await axios.get(
         `https://api.weatherapi.com/v1/current.json?key=${api_key}&q=${city}`
       );
       setWeatherData(response.data);
       setLoading(false);
+      setMsg("");
     
     } catch (err) {
       setWeatherData(null);
       setLoading(true);
+      setMsg("Loading data…");
       alert( "Failed to fetch weather data");
     }
     
@@ -42,7 +46,7 @@ const Weather = () => {
       <button onClick={handleSearch}>Search</button>
       </div>
 
-      {loading && <p>Loading data…</p>}
+      {loading && <p>{msg}</p>}
 
       {weatherData && (
         <div className="weather-cards">
