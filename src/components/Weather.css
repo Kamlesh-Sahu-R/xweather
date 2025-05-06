@@ -1,0 +1,40 @@
+.weather-cards{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 50px;
+    margin: 50px;
+}
+.weather-card{
+    background-color:white;
+    width: 20vw;
+    border-radius: 5px;
+    text-align: center;
+}
+button{
+    background-color: green;
+    height: 54px;
+    width: 100px;
+    border-radius: 5px;
+}
+input{
+    background-color: ghostwhite;
+    width: 600px;
+    height: 50px;
+    border-radius: 5px;
+}
+body{
+    background-color: aquamarine;
+}
+.search-container{
+    display: flex;
+    gap: 30px;
+}
+.weather-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    margin: 50px;
+}
