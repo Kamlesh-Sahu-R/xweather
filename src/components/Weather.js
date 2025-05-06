@@ -11,6 +11,7 @@ const Weather = () => {
 
   const handleSearch = async () => {
     if (!city) return;
+    setWeatherData(null);
     setLoading(true);
     try {
       const response = await axios.get(
