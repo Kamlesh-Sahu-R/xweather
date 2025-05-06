@@ -14,7 +14,7 @@ const Weather = () => {
     if (!city) return;
     setWeatherData(null);
     setLoading(true);
-    setMsg("Loading data…");
+    setMsg('Loading data...');
     try {
       const response = await axios.get(
         `https://api.weatherapi.com/v1/current.json?key=${api_key}&q=${city}`
@@ -26,7 +26,7 @@ const Weather = () => {
     } catch (err) {
       setWeatherData(null);
       setLoading(true);
-      setMsg("Loading data…");
+      setMsg('Loading data...');
       alert( "Failed to fetch weather data");
     }
     
